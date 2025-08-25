@@ -278,6 +278,24 @@
             transform: translateY(-1px);
         }
 
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-right: 10px;
+            width: auto;
+            cursor: pointer;
+        }
+
+        .checkbox-label span {
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .result-grid {
                 grid-template-columns: 1fr;
@@ -332,6 +350,18 @@
                     <div class="control-item">
                         <label for="height">Alto (opcional):</label>
                         <input type="number" id="height" placeholder="Mantener proporción">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-item">
+                        <label for="maxWidth">Ancho máximo para paisajes:</label>
+                        <input type="number" id="maxWidth" value="1920" min="800" max="4000" placeholder="1920px">
+                    </div>
+                    <div class="control-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="autoLandscape" checked>
+                            <span>Compresión automática para paisajes</span>
+                        </label>
                     </div>
                 </div>
                 <button class="compress-btn" id="compressBtn" disabled>
